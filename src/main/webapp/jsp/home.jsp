@@ -3,6 +3,6 @@
 <title> This is title</title>
 </head>
 <body>
-<p>This is passcode </p>
+<p>Hi ${name} </p>
 </body>
 </html>

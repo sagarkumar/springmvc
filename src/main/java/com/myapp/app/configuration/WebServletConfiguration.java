@@ -1,4 +1,4 @@
-package com.myapp.app;
+package com.myapp.app.configuration;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -13,6 +13,7 @@ public class WebServletConfiguration implements WebApplicationInitializer {
 	public void onStartup(ServletContext ctx) throws ServletException {
 		AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();
 		context.register(ApplicationContextConfiguration.class);
+		context.setServletContext(ctx);
 		
 		ServletRegistration.Dynamic servlet = ctx.addServlet("dispatcherServlet", new DispatcherServlet(context));
 		servlet.setLoadOnStartup(1);
